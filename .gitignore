@@ -1,0 +1,27 @@
+# Dependências e artefatos
+/node_modules/
+/.next/
+/out/
+/coverage/
+/playwright-report/
+/test-results/
+
+# Variáveis e segredos
+.env
+.env.*
+!.env.example
+
+# Vídeos e mídia bruta (o filme pertence ao R2, nunca ao Git)
+*.mp4
+*.webm
+*.mov
+*.mkv
+*.avi
+*.part
+
+# Ferramentas e sistema
+*.log
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+.vercel
