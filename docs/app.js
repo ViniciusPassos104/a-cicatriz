@@ -1,26 +1,28 @@
-const RELEASE =
+const RELEASE_PADRAO =
   "https://github.com/ViniciusPassos104/a-cicatriz/releases/download/filmes-v1";
+const RELEASE_HQ =
+  "https://github.com/ViniciusPassos104/a-cicatriz/releases/download/filmes-v2";
 
 const filmes = {
   "a-cicatriz": {
     titulo: "A Cicatriz",
     fontes: {
-      "1080p": `${RELEASE}/a-cicatriz-1080p.mp4`,
-      "720p": `${RELEASE}/a-cicatriz-720p.mp4`,
+      "1080p": `${RELEASE_HQ}/a-cicatriz-1080p.mp4`,
+      "720p": `${RELEASE_PADRAO}/a-cicatriz-720p.mp4`,
     },
   },
   "mais-depressivo": {
     titulo: "Mais Depressivo",
     fontes: {
-      "1080p": `${RELEASE}/mais-depressivo-1080p.mp4`,
-      "720p": `${RELEASE}/mais-depressivo-720p.mp4`,
+      "1080p": `${RELEASE_HQ}/mais-depressivo-1080p.mp4`,
+      "720p": `${RELEASE_PADRAO}/mais-depressivo-720p.mp4`,
     },
   },
   "resultado-final": {
     titulo: "Resultado Final",
     fontes: {
-      "1080p": `${RELEASE}/resultado-final-1080p.mp4`,
-      "720p": `${RELEASE}/resultado-final-720p.mp4`,
+      "1080p": `${RELEASE_HQ}/resultado-final-1080p.mp4`,
+      "720p": `${RELEASE_PADRAO}/resultado-final-720p.mp4`,
     },
   },
 };
@@ -59,7 +61,6 @@ function formatarTempo(segundos) {
 function qualidadeAutomatica() {
   const conexao = navigator.connection;
   if (
-    window.innerWidth < 800 ||
     conexao?.saveData ||
     ["slow-2g", "2g", "3g"].includes(conexao?.effectiveType)
   ) {
@@ -128,9 +129,9 @@ function abrirFilme(id, atualizarUrl = true) {
   titulo.textContent = filme.titulo;
   tela.hidden = false;
   document.body.classList.add("player-aberto");
-  qualidade.value = "auto";
+  qualidade.value = "1080p";
   qualidadeAtiva = null;
-  trocarFonte(qualidadeAutomatica(), false);
+  trocarFonte("1080p", false);
   if (atualizarUrl) {
     const url = new URL(window.location.href);
     url.searchParams.set("filme", id);
