@@ -1,5 +1,10 @@
 # A Cicatriz
 
+**Site público:** https://viniciuspassos104.github.io/a-cicatriz/
+
+O catálogo público no GitHub Pages inclui as versões **A Cicatriz**, **Mais
+Depressivo** e **Resultado Final**, com player próprio e qualidades 1080p/720p.
+
 Para assistir localmente no Chrome sem interferência de extensões, dê dois
 cliques em `ABRIR A CICATRIZ NO CHROME.cmd`. O atalho inicia o servidor e abre
 uma janela limpa do site com aparência de aplicativo.
